@@ -9,15 +9,21 @@ const App=()=>{
     setRandomColor(color)
     
   }
+  const resetBackground=()=>{
+    setRandomColor('black')
+  }
 return (
   <>
   <StatusBar backgroundColor={randomColor}/>
   <View style={[styles.container,{backgroundColor:randomColor}]} >
-    <TouchableOpacity onPress={changeBackground}>
+  <TouchableOpacity onPress={changeBackground}>
   <Text style={styles.text}>Tap ME!!!</Text>
   </TouchableOpacity>
+  <TouchableOpacity onPress={resetBackground}>
+  <Text style={styles.resetText}>Reset !!</Text>
+  </TouchableOpacity>
   </View>
-  </>
+   </>
 )
 }
 
@@ -33,6 +39,15 @@ const styles = StyleSheet.create({
 text:{
     fontSize:30,
     backgroundColor:"#BB2CD9",
+    paddingVertical:10,
+    paddingHorizontal:40,
+    color:"white",
+    borderRadius:15,
+    margin:20
+  },
+  resetText:{
+    fontSize:30,
+    backgroundColor:"black",
     paddingVertical:10,
     paddingHorizontal:40,
     color:"white",
